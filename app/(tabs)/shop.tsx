@@ -122,29 +122,31 @@ export default function Shop() {
 
   const listHeader = (
     <>
-      <View style={styles.searchRow}>
-        <View style={styles.searchPill}>
-          <Ionicons name="search" size={18} color="#4a3f35" />
-          <TextInput
-            placeholder="search by brands"
-            placeholderTextColor="#6b5d4f"
-            value={search}
-            onChangeText={setSearch}
-            style={styles.searchInput}
-          />
-          <View style={styles.searchIconsRight}>
-            <TouchableOpacity hitSlop={8}>
-              <Ionicons name="camera-outline" size={18} color="#4a3f35" />
-            </TouchableOpacity>
-            <TouchableOpacity hitSlop={8} style={{ marginLeft: 10 }}>
-              <Ionicons name="mic-outline" size={18} color="#4a3f35" />
-            </TouchableOpacity>
-          </View>
-        </View>
-        <TouchableOpacity style={styles.filterBtn} activeOpacity={0.85}>
-          <Ionicons name="options-outline" size={20} color="#2a221d" />
-        </TouchableOpacity>
-      </View>
+     <View style={styles.searchWrap}>
+  <View style={styles.searchPill}>
+    <Ionicons name="search" size={18} color="#5c4634" />
+
+    <TextInput
+      placeholder="search by brands"
+      placeholderTextColor="#f3e6d4"
+      value={search}
+      onChangeText={setSearch}
+      style={styles.searchInput}
+    />
+
+    <Ionicons name="camera-outline" size={16} color="#5c4634" />
+    <Ionicons
+      name="mic-outline"
+      size={16}
+      color="#5c4634"
+      style={{ marginLeft: 8 }}
+    />
+  </View>
+
+  <TouchableOpacity style={styles.filterBtn}>
+    <Ionicons name="options-outline" size={20} color="#2a221d" />
+  </TouchableOpacity>
+</View>
 
       <ScrollView
         horizontal
@@ -308,45 +310,42 @@ const styles = StyleSheet.create({
     opacity: 0.9,
   },
 
-  searchRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    marginTop: 16,
-    gap: 10,
-  },
+searchWrap: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 10,
+  paddingHorizontal: 16,
+  paddingTop: 14,
+  paddingBottom: 12,
+},
 
-  searchPill: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'rgba(197, 154, 109, 0.42)',
-    borderRadius: 28,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-  },
+searchPill: {
+  flex: 1,
+  height: 44,
+  borderRadius: 11,
+  backgroundColor: '#c59a6d',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 12,
+},
 
-  searchInput: {
-    flex: 1,
-    marginLeft: 8,
-    color: '#2a221d',
-    fontSize: 14,
-    paddingVertical: 0,
-  },
+searchInput: {
+  flex: 1,
+  color: '#f4ebdf',
+  fontSize: 14,
+  marginLeft: 10,
+  marginRight: 8,
+  paddingVertical: 0,
+},
 
-  searchIconsRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-
-  filterBtn: {
-    width: 48,
-    height: 48,
-    borderRadius: 14,
-    backgroundColor: '#C59A6D',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+filterBtn: {
+  width: 44,
+  height: 44,
+  borderRadius: 11,
+  backgroundColor: '#c59a6d',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
 
   categoryRow: {
     paddingHorizontal: 16,

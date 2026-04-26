@@ -265,6 +265,41 @@ profileInnerBg: {
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: 'rgba(197, 154, 109, 0.15)'
-}
+},
+searchWrap: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 10,
+  paddingHorizontal: 16,
+  paddingTop: 14,
+  paddingBottom: 12,
+},
 
+searchPill: {
+  flex: 1,
+  height: 44,
+  borderRadius: 11,
+  backgroundColor: '#c59a6d',
+  flexDirection: 'row',
+  alignItems: 'center',
+  paddingHorizontal: 12,
+},
+
+searchInput: {
+  flex: 1,
+  color: '#f4ebdf',
+  fontSize: 14,
+  marginLeft: 10,
+  marginRight: 8,
+  paddingVertical: 0,
+},
+
+filterBtn: {
+  width: 44,
+  height: 44,
+  borderRadius: 11,
+  backgroundColor: '#c59a6d',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
 });

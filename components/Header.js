@@ -19,28 +19,15 @@ export default function Header() {
         </Text>
 
         <View style={styles.headerRight}>
-          <TouchableOpacity onPress={() => router.push('/search')}>
-            <Ionicons name="search" size={20} color="#fff" style={{ marginRight: 15 }} />
+           <View style={[styles.side, styles.sideRight]}>
+          <TouchableOpacity
+            hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+            accessibilityRole="button"
+            accessibilityLabel="Wishlist"
+          >
+            <Ionicons name="heart-outline" size={24} color="#fff" />
           </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => router.push('/cart')}>
-            <View style={[styles.cartContainer, { marginRight: 15 }]}>
-              <Ionicons name="bag-outline" size={20} color="#fff" />
-              {totalItems > 0 && (
-                <View style={styles.badge}>
-                  <Text style={styles.badgeText}>{totalItems}</Text>
-                </View>
-              )}
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => router.push('/profile')}>
-            <View style={styles.profileCircle}>
-              <View style={styles.profileInnerBg}>
-                <Ionicons name="person-outline" size={16} color="#C59A6D" />
-              </View>
-            </View>
-          </TouchableOpacity>
+        </View>
         </View>
       </View>
 
@@ -79,38 +66,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
 
-  badge: {
-    position: 'absolute',
-    top: -5,
-    right: -10,
-    backgroundColor: '#C59A6D',
-    borderRadius: 10,
-    paddingHorizontal: 5,
-  },
 
-  badgeText: {
-    color: '#000',
-    fontSize: 10,
-  },
-
-  profileCircle: {
-    width: 38,
-    height: 38,
-    borderRadius: 18,
-    borderWidth: 0.5,
-    borderColor: '#C59A6D',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  profileInnerBg: {
-    width: 25,
-    height: 25,
-    borderRadius: 11,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(197, 154, 109, 0.15)',
-  },
 
   divider: {
     height: 1,

@@ -1,5 +1,5 @@
 import { styles } from './HomeScreen.styles';
-import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { BlurView } from 'expo-blur';
@@ -12,13 +12,40 @@ export default function HomeScreen() {
   const [showToast, setShowToast] = useState(false);
   const { cartItems, addToCart } = useCart();
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const [search, setSearch] = useState('');
+
   return (
      <View style={{ flex: 1, backgroundColor: '#1a1410', position: 'relative' }}>
       <Header />
      
       <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 80 }}>
         
-        
+   <View style={styles.searchWrap}>
+  <View style={styles.searchPill}>
+    <Ionicons name="search" size={18} color="#5c4634" />
+
+    <TextInput
+      value={search}
+      onChangeText={setSearch}
+      placeholder="search by brands"
+      placeholderTextColor="#f3e6d4"
+      style={styles.searchInput}
+    />
+
+    <Ionicons name="camera-outline" size={16} color="#5c4634" />
+
+    <Ionicons
+      name="mic-outline"
+      size={16}
+      color="#5c4634"
+      style={{ marginLeft: 8 }}
+    />
+  </View>
+
+  <TouchableOpacity style={styles.filterBtn}>
+    <Ionicons name="options-outline" size={20} color="#2a221d" />
+  </TouchableOpacity>
+</View>
 
       
 
